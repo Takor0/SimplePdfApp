@@ -5,21 +5,28 @@ setup(
     version="0.1.0",
     description="Minimal FastAPI + Celery service for generating PDF thumbnails",
     author="Tomasz",
-    packages=find_packages(include=["*",]),
-
+    packages=find_packages(
+        include=[
+            "*",
+        ]
+    ),
     install_requires=[
-        "fastapi>=0.85.0",
-        "uvicorn[standard]>=0.18.0",
-        "celery>=5.2.0",
-        "PyMuPDF>=1.21.0"
-        "python-multipart>=0.0.5",
+        "fastapi",
+        "uvicorn[standard]",
+        "celery",
+        "pypdf",
+        "PyMuPDF",
+        "reportlab",
+        "python-multipart",
+        "redis",
+        "werkzeug",
+        "black",
+        "pandas",
     ],
-
     entry_points={
         # opcjonalnie: konsolowy skrót do uruchomienia API
         "console_scripts": [
             "run-pdf-api = main:app",
         ],
     },
-
 )

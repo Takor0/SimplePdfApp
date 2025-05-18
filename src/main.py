@@ -1,5 +1,15 @@
 from fastapi import FastAPI
 
-from endpoints import file
-app = FastAPI()
-app.include_router(file.router)
+
+def create_app() -> FastAPI:
+    from src.endpoints import file, task
+
+    app = FastAPI()
+
+    app.include_router(file.router)
+    app.include_router(task.router)
+
+    return app
+
+
+app = create_app()

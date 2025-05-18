@@ -1,5 +1,6 @@
 from fastapi import APIRouter, UploadFile, HTTPException
 from starlette import status
+from starlette.responses import FileResponse
 from werkzeug.utils import secure_filename
 
 from src.config import UPLOAD_DIR, RESULTS_DIR
@@ -33,4 +34,8 @@ def download_result(file_name: str):
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"File '{file_name}' not found.",
         )
-    return file_path
+    return FileResponse(
+        file_path,
+        media_type="application/zip",
+        filename=file_name,
+    )

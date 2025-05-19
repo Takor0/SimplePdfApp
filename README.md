@@ -74,7 +74,7 @@ docker-compose up -d
 
 ## 📁 Working Directories
 
-By default, uploaded files are stored in `/tmp/uploads` and task output in `/tmp/results`. These directories are created automatically at application startup. To override:
+By default, uploaded files are stored in `/tmp/uploads` and task output in `/tmp/results`. These directories need to be created and writable by the application.
 
 * `UPLOAD_DIR`: path for uploaded files (default `/tmp/uploads`)
 * `RESULT_DIR`: path for task outputs (default `/tmp/results`)

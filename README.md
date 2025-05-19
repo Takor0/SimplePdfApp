@@ -48,12 +48,22 @@ All functionality is exposed via a REST API using **FastAPI**, with asynchronous
 
 ---
 
-## 🚀 Running with Docker Compose
+## 🚀 RunningDocker Compose
 
 ```bash
 git clone https://github.com/yourrepo/SimplePdfApp.git
 cd SimplePdfApp
 docker-compose up -d
+```
+
+## 🚀 Run api and celery
+
+```bash
+   make dev_run
+```
+
+```bash
+   make dev_run_celery
 ```
 
 * FastAPI docs:   `http://localhost:8000/docs`

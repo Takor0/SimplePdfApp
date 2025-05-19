@@ -97,9 +97,9 @@ def split_pdf(file_name: str, separator: str, keep_separator: bool = False):
             )
             group_pages.clear()
             group_index += 1
-
-    shutil.rmtree(result_dir)
     store_zip(result_dir, zip_path)
+    shutil.rmtree(result_dir)
+
 
     return zip_path.name
 
